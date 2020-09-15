@@ -1,3 +1,6 @@
 [submodule "volunteer-api"]
 	path = volunteer-api
 	url = https://github.com/cicinth/volunteer-api.git
+[submodule "volunteer-webapp"]
+	path = volunteer-webapp
+	url = https://github.com/cicinth/volunteer-webapp.git
