@@ -4,3 +4,6 @@
 [submodule "volunteer-webapp"]
 	path = volunteer-webapp
 	url = https://github.com/cicinth/volunteer-webapp.git
+[submodule "automacao"]
+	path = automacao
+	url = https://github.com/cicinth/automacao.git
