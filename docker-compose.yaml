@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: NbVpjq3NcQSjFv7L
+    networks:
+      - base_network
+    ports:
+      - "15432:5432"
+  api:
+    container_name: volunteer_api
+    image: node:8-alpine
+    networks: 
+      - base_network
+    ports:
+      - "8080:80"
+    command: sh -c "npm install && npm run local"
+    working_dir: /app
+    volumes:
+      - ./volunteer-api:/app
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "root"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+    networks:
+      - base_network
+
+networks:
+  base_network:
